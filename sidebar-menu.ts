@@ -63,7 +63,6 @@ export async function showSBMIfEnabled() {
 }
 
 export async function showSidebarMenu(): Promise<any | null> {
-  //let config: OutlineSBConfig = {};
   await editor.hidePanel("rhs");
 
   const [plusCss, plugJs] = await Promise.all([
@@ -71,7 +70,16 @@ export async function showSidebarMenu(): Promise<any | null> {
     asset.readAsset(PLUG_NAME, "assets/sidebar-menu.js"),
   ]);
 
-  const sidebar = await space.readPage("SIDEBAR");
+  // check if the SIDEBAR exists
+  const sidebarFileExists = await space.fileExists("SIDEBAR.md");
+  //console.info(`sidebar-menu: sidebarFileExists ${sidebarFileExists}`);
+
+  let sidebar = "No SIDEBAR";
+
+  if (sidebarFileExists) {
+    sidebar = await space.readPage("SIDEBAR");
+  }
+
   const finalHtml = await syscall("markdown.markdownToHtml", sidebar);
 
   await editor.showPanel(
@@ -88,10 +96,7 @@ export async function showSidebarMenu(): Promise<any | null> {
         <br/>
         <a href="SIDEBAR">(edit)</a>
         `,
-    `
-        <${plugJs}
-        addClickEvent()>
-        `,
+    ``,
   );
 
   await setSBMEnabled(true);
