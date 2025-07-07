@@ -1,0 +1,24 @@
+name: sidebar-menu
+assets:
+  - "assets/**/*.*"
+functions:
+  showSidebarMenu:
+    path: "./sidebar-menu.ts:showSidebarMenu"
+
+  hideSidebarMenu:
+    path: "./sidebar-menu.ts:hideSidebarMenu"
+
+  showSBMIfEnabled:
+    path: "./sidebar-menu.ts:showSBMIfEnabled"
+    events:
+      - editor:init
+      - editor:updated
+      - editor:pageLoaded
+      - editor:pageReloaded
+
+  toggle:
+    path: "./sidebar-menu.ts:toggleSidebarMenu"
+    command:
+      name: "Sidebar Menu: Toggle"
+      key: Ctrl-alt-o
+      mac: Cmd-alt-o

@@ -1,0 +1,29 @@
+#sidebar-menu-root {
+  font-family: var(--editor-font);
+  font-size: 0.85rem;
+}
+
+#sidebar-menu-root ul {
+  list-style: none;
+  padding-inline-start: 16px;
+}
+
+#sidebar-menu-root li::before {
+  content: "\2B9E";
+  color: var(--editor-list-bullet-color);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+#sidebar-menu-root span.sbm-clickable:hover {
+  cursor: pointer;
+}
+
+#sidebar-menu-root span.sbm-clickable {
+  border-radius: 5px;
+  padding: 0 5px;
+  color: var(--editor-wiki-link-page-color);
+  background-color: var(--editor-wiki-link-page-background-color);
+  text-decoration: none;
+}

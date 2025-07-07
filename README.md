@@ -1,8 +1,9 @@
 
-# SilverBullet Outline Sidebar
+# SilverBullet Sidebar Menu
 
-This plug will open a sidebar on the right of the window displaying the current pages headings in a list, clicking on the list will jump to that heading position
+This plug will open a sidebar on the right of the window displaying the SIDEBAR page
 
+**update screenshots**
 ![Screenshot](screenshot.png)
 ![Screenshot-dark](screenshot-dark.png)
 
@@ -11,7 +12,7 @@ This plug will open a sidebar on the right of the window displaying the current 
 If you would like to install this plug straight from Github, make sure you have the `.js` file committed to the repo and simply add
 
 ```yaml
-- github:minusInfinite/outline-sidebar/outline-sidebar.plug.js
+- github:barbergeek/silverbullet-sidebar-menu/sidebar-menu.plug.js
 ```
 
 to your `PLUGS` file, run `Plugs: Update` command and off you go!
@@ -31,13 +32,11 @@ Adding this will now scroll smoothly when clicked.
 
 ## Commands
 
-`Outline Sidebar: Tooggle` Toggle the sidebar open or close or with `Ctrl+Alt+o` or `Cmd+alt+o` on Mac
+`Sidebar Menu: Tooggle` Toggle the sidebar open or close or with `Ctrl+Alt+o` or `Cmd+alt+o` on Mac
 
 ## To-do and known issues
 
-- [ ] Colapsing the outline would a nice feature
-
-- [x] Sidebar does remain open between page reloads but doesn't refresh the heading list when edited, saved or page change.
+- [ ] Finish developing. Waiting for a new push of sb to jsr.
 
 ## Contributions
 

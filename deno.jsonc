@@ -1,9 +1,10 @@
 {
   "tasks": {
-    "build": "silverbullet plug:compile -c deno.jsonc outline-sidebar.plug.yaml",
-    "watch": "silverbullet plug:compile -c deno.jsonc outline-sidebar.plug.yaml -w",
-    "debug": "silverbullet plug:compile -c deno.jsonc outline-sidebar.plug.yaml --debug",
-    "test": "deno test -A --unstable-kv --unstable-worker-options"
+    "build": "deno run -A https://github.com/silverbulletmd/silverbullet/releases/download/edge/plug-compile.js -c deno.jsonc sidebar-menu.plug.yaml",
+    "watch": "deno run -A https://github.com/silverbulletmd/silverbullet/releases/download/edge/plug-compile.js -c deno.jsonc sidebar-menu.plug.yaml -w",
+    "debug": "deno run -A https://github.com/silverbulletmd/silverbullet/releases/download/edge/plug-compile.js -c deno.jsonc sidebar-menu.plug.yaml --debug",
+    "test": "deno test -A --unstable-kv --unstable-worker-options",
+    "install": "cp sidebar-menu.plug.js ../silverbullet/test_space/_plug"
   },
   "lint": {
     "rules": {
@@ -20,7 +21,7 @@
     ]
   },
   "imports": {
-    "@silverbulletmd/silverbullet": "jsr:@silverbulletmd/silverbullet@^0.10.4"
+    "@silverbulletmd/silverbullet": "jsr:@silverbulletmd/silverbullet@^2.0.0-pre"
   },
   "compilerOptions": {
     "checkJs": false,
