@@ -36,7 +36,7 @@ Adding this will now scroll smoothly when clicked.
 
 ## To-do and known issues
 
-- [ ] Finish developing. Waiting for a new push of sb to jsr.
+- [x] Initial version.
 
 ## Contributions
 

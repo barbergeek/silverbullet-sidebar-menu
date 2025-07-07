@@ -2,12 +2,10 @@ import {
   asset,
   clientStore,
   editor,
-  markdown,
   space,
+  syscall,
   system,
 } from "@silverbulletmd/silverbullet/syscalls";
-import { stripMarkdown } from "@silverbulletmd/silverbullet/lib/markdown";
-import { traverseTree } from "@silverbulletmd/silverbullet/lib/tree";
 
 type Header = {
   name: string;
@@ -73,8 +71,8 @@ export async function showSidebarMenu(): Promise<any | null> {
     asset.readAsset(PLUG_NAME, "assets/sidebar-menu.js"),
   ]);
 
-  let sidebar = await space.readPage("SIDEBAR");
-  const finalHTML = await markdown.markdownToHtml(sidebar);
+  const sidebar = await space.readPage("SIDEBAR");
+  const finalHtml = await syscall("markdown.markdownToHtml", sidebar);
 
   await editor.showPanel(
     "rhs",
@@ -87,10 +85,12 @@ export async function showSidebarMenu(): Promise<any | null> {
         <div id="sidebar-menu-root">
             ${finalHtml}
         </div>
+        <br/>
+        <a href="SIDEBAR">(edit)</a>
         `,
     `
-        ${plugJs}
-        addClickEvent()
+        <${plugJs}
+        addClickEvent()>
         `,
   );
 
