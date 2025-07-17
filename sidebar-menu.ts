@@ -63,7 +63,7 @@ export async function showSBMIfEnabled() {
 }
 
 export async function showSidebarMenu(): Promise<any | null> {
-  await editor.hidePanel("rhs");
+  // await editor.hidePanel("rhs");
 
   const [plusCss, plugJs] = await Promise.all([
     asset.readAsset(PLUG_NAME, "assets/sidebar-menu.css"),
